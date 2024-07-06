@@ -1,10 +1,20 @@
+// import controller review, products
 const productController = require('../controllers/productController.js')
+const reviewController = require('../controllers/reviewController.js')
 
+// router
 const router = require('express').Router()
 
+//use routers
 router.post('/addProduct', productController.addProduct)
 router.get('/allProducts', productController.getAllProducts)
 router.get('/published', productController.getPublishedProduct)
+
+// Reviews Url and Controller
+router.post('/addReview', reviewController.addReview)
+router.get('/allReviews', reviewController.getAllReviews)
+
+// Products router
 router.get('/:id', productController.getOneProduct)
 router.put('/:id', productController.updateProduct)
 router.delete('/:id', productController.deleteProduct)
