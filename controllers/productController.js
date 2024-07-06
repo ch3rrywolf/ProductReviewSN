@@ -34,7 +34,7 @@ const getAllProducts = async (req, res) => {
 
 //3. get single Product
 
-const getOneProducts = async (req, res) => {
+const getOneProduct = async (req, res) => {
 
     let id = req.params.id
     let product = await Product.findOne({ where: { id: id }})
@@ -62,7 +62,7 @@ const deleteProduct = async (req, res) => {
     
 }
 
-//5. get published Product
+//6. get published Product
 
 const getPublishedProduct = async (req, res) => {
 
@@ -74,7 +74,7 @@ const getPublishedProduct = async (req, res) => {
 module.exports = {
     addProduct,
     getAllProducts,
-    getOneProducts,
+    getOneProduct,
     updateProduct,
     deleteProduct,
     getPublishedProduct
