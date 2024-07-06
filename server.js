@@ -9,11 +9,17 @@ var corOptions = {
     origin: 'https://127.0.0.1:8081'
 }
 
+
 // middleware
 
 app.use(cors(corOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
+
+// routers
+const router = require('./routes/productRouter.js')
+app.use('/api/products', router)
+
 
 // testing api
 
